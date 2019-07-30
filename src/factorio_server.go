@@ -192,8 +192,6 @@ func (f *FactorioServer) Run() error {
 		args = append(args, "--start-server", filepath.Join(config.FactorioSavesDir, f.Savefile))
 	}
 
-	log.Println("Starting server with command: ", config.FactorioBinary, args)
-
 	if config.glibcCustom == "true" {
 		log.Println("Starting server with command: ", config.glibcLocation, args)
 		f.Cmd = exec.Command(config.glibcLocation, args...)
